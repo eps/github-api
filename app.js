@@ -5,9 +5,9 @@ var username;
 var fullname;
 
 $(document).ready(function (){
-  $('#ghsubmit').on('click', function (e) {
+  $('#ghusername').on('submit', function (e) {
     e.preventDefault();
-    var username = $('#ghusername').val();
+    var username = $('#ghuserdname').val();
     console.log('search button clicked for ' + username);
     callGithubAPI();
   });
@@ -15,7 +15,7 @@ $(document).ready(function (){
   function callGithubAPI(){
     $.ajax({
       method: "GET",
-      url: github_endpoint + $('#ghusername').val(),
+      url: github_endpoint + $('#ghuserdname').val(),
       success: displayGithubInfo,
       error: handleError
     });
@@ -41,11 +41,11 @@ $(document).ready(function (){
     }
 
     var outhtml = '<h2>'+fullname+' <span class="smallname">(@<a href="'+profileurl+'" target="_blank">'+username+'</a>)</span></h2>';
-   outhtml = outhtml + '<div class="ghcontent"><div class="avi"><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="80" height="80" alt="'+username+'"></a></div>';
-   outhtml = outhtml + '<p>Followers: '+followersnum+' - Following: '+followingnum+'<br>Repos: '+reposnum+'</p></div>';
-   outhtml = outhtml + '<div class="repolist clearfix">';
+    outhtml = outhtml + '<div class="ghcontent"><div class="avi"><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="80" height="80" alt="'+username+'"></a></div>';
+    outhtml = outhtml + '<p>Followers: '+followersnum+' - Following: '+followingnum+'<br>Repos: '+reposnum+'</p></div>';
+    outhtml = outhtml + '<div class="repolist clearfix">';
 
-   $('#ghinfo').append(outhtml);
+   $('#ghinfo').html(outhtml);
 
   }
 

@@ -10,6 +10,7 @@ $(document).ready(function (){
     var username = $('#ghuserdname').val();
     console.log('search button clicked for ' + username);
     callGithubAPI();
+    callGithubRepo();
   });
 
   function callGithubAPI(){
@@ -55,6 +56,30 @@ $(document).ready(function (){
     console.log(xhr);
     if(errorThrown == "Not Found" ) {
       $('#ghinfo').html("<h2>No User Info Found</h2>");
+    }
+  }
+
+  function callGithubRepo(){
+    console.log(github_endpoint + $('#ghuserdname').val() + "/repos");
+    $.ajax({
+      method: "GET",
+      url: github_endpoint + $('#ghuserdname').val() + "/repos",
+      success: displayGithubRepo,
+      error: handleError
+    });
+  }
+
+  function displayGithubRepo(json){
+    if (json.length === 0) {
+      outhtml = "<h2>No Repos</h2>";
+    } else {
+      $.each(json,function(value,index) {
+        var repourl = index.html_url;
+        var outhtml = "<div class='btn btn-sm btn-default'><h2><a href="+repourl+">Repo</a></h2></div>";
+        console.log('showing repo url', repourl);
+
+        $('#ghrepo').html(outhtml);
+      });
     }
   }
 

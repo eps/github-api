@@ -54,7 +54,7 @@ $(document).ready(function (){
     console.log("Status: " + status);
     console.log(xhr);
     if(errorThrown == "Not Found" ) {
-      $('#ghinfo').append("<h2>No User Info Found</h2>");
+      $('#ghinfo').html("<h2>No User Info Found</h2>");
     }
   }
 

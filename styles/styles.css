@@ -3,13 +3,16 @@ body {
 }
 
 #hi {
-  border: 1px solid black;
+  border: 1px solid rgba(0,0,0,.19);
   padding: 30px;
   background-color: white;
   margin: 10% 0 30% 0;
 }
+
+#ghinfo {
+  padding: 25px 0;
+}
 #ghinfo .repolist .btn {
-  border-radius: 25px;
   margin: 5px;
 }
 
@@ -22,10 +25,43 @@ body {
   margin-top: 15px;
   width: 20%;
 }
-ul {
-  list-style-type: none;
+
+.avi {
+  float: left;
+  margin-bottom: 7px;
+  margin-right: 7px;
 }
 
-h1 {
-  font-family: sans-serif;
+.avi img {
+  border: 1px solid #ccc;
+}
+
+.repolist {
+  display: block;
+  width: 100%;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+.repolist ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.repolist ul li a:hover {
+  background-color: #396895;
+}
+
+.repolist ul .btn li a {
+  color: white;
+}
+.repolist ul .btn {
+  background-color:#396895;
+  background-image: -webkit-linear-gradient(top, #5597d8, #3673af);
+}
+
+h1, h2 {
+  font-family: "Open Sans", sans-serif;
 }

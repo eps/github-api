@@ -2,7 +2,8 @@ console.log("Sanity Check: JS is working");
 
 $(document).ready(function (){
 
-  $('#ghusername').on('submit', function (e) {
+  $('#ghsubmit').on('click', function (e) {
+
     e.preventDefault();
 
     var username = $('#ghuserdname').val();
@@ -86,3 +87,8 @@ $(document).ready(function (){
       $('#ghinfo').html("<strong>Not a valid user found</strong>");
     }
   }
+
+  $('#ghcancel').on('click', function() {
+    console.log('trying to clear input field');
+    $('#ghuserdname').val(" ");
+  });

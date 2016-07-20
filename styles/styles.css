@@ -1,16 +1,31 @@
 body {
-  background-color: rgba(199, 199, 199, 0.29);
+  background-color: #fafafa;
 }
 
 #hi {
   border: 1px solid black;
+  padding: 30px;
   background-color: white;
+  margin: 10% 0 30% 0;
 }
 #ghinfo .repolist .btn {
   border-radius: 25px;
   margin: 5px;
 }
 
+#ghsubmit {
+  margin-top: 15px;
+  width: 20%;
+}
+
+#ghcancel {
+  margin-top: 15px;
+  width: 20%;
+}
 ul {
   list-style-type: none;
+}
+
+h1 {
+  font-family: sans-serif;
 }

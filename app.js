@@ -50,6 +50,7 @@ $(document).ready(function (){
        console.log('new fullname', json.login);
       }
 
+      // displays Github username, follwers, repos.. etc
       var outhtml = '<h2>'+fullname+' <span class="smallname">(@<a href="'+profileurl+'" target="_blank">'+username+'</a>)</span></h2>';
       outhtml = outhtml + '<div class="ghcontent"><div class="avi"><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="80" height="80" alt="'+username+'"></a></div>';
       outhtml = outhtml + '<p>Followers: '+followersnum+' - Following: '+followingnum+'<br>Repos: '+reposnum+'</p></div>';
@@ -73,6 +74,8 @@ $(document).ready(function (){
           });
           outhtml = outhtml + '</ul></div>';
         }
+
+        //displays Github Repos
         $('#ghinfo').html(outhtml);
       }
     }
